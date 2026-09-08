@@ -1,5 +1,16 @@
 require("dotenv").config();
 
+const http = require("http");
+
+const PORT = process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("AETHERZYY Obfuscator Bot is online.");
+}).listen(PORT, () => {
+  console.log(`HTTP server running on port ${PORT}`);
+});
+
 const {
   Client,
   GatewayIntentBits,
